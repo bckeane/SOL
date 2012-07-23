@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MvcSOL.Models.SOL>
+
+@{
+    ViewBag.Title = "SearchIndex";
+}
+
+<h2>SearchIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    @using (Html.BeginForm("SearchIndex","SOL",FormMethod.Get)){   
+         <p> Title: @Html.TextBox("id")
+         <input type="submit" value="Filter" /></p>
+        }
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Case)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Atty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Case)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Atty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.caseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.caseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.caseID })
+        </td>
+    </tr>
+}
+
+</table>

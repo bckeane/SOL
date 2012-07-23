@@ -1,0 +1,39 @@
+﻿@model MvcSOL.Models.SOL
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SOL</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Case)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Case)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Atty)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Atty)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SOLDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOLDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

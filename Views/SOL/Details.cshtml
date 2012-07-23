@@ -1,0 +1,36 @@
+﻿@model MvcSOL.Models.SOL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SOL</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Case)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Case)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Atty)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Atty)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SOLDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOLDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.caseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

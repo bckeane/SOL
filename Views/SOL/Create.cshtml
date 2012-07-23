@@ -1,0 +1,51 @@
+﻿@model MvcSOL.Models.SOL
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SOL</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Case)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Case)
+            @Html.ValidationMessageFor(model => model.Case)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Atty)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Atty)
+            @Html.ValidationMessageFor(model => model.Atty)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SOLDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SOLDate)
+            @Html.ValidationMessageFor(model => model.SOLDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
